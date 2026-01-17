@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Custom Event</title>
+</head>
+
+<body>
+    <input type="text" id="n">
+    <div>
+        <button id="btn1">Click Me</button>
+        <button id="btn2">Click Me</button>
+        <button id="btn3">Click Me</button>
+        <button id="btn4">Click Me</button>
+    </div>
+    <script>
+        let n = document.querySelector("#n");
+
+        // let count = 0;
+        // document.addEventListener('click', () => {
+        //     count++;
+        //     if (count === 3) {
+        //         alert("clicked");
+        //     }
+        // });
+
+
+        // n.addEventListener('keypress', (e) => {
+        //     if (e.target.value === "5") {
+        //         console.log(`shh your sewcret code is ${e.target.value}`);
+        //     }
+        // });
+
+    
+        // let btn = document.querySelectorAll('button');
+
+
+        // btn.forEach((y)=>{
+        //     y.addEventListener('click',(e)=>{
+        //         alert(y.id);
+        //     });
+        // });
+
+
+
+        const obj = {
+            age : 20,
+            fun :alert(age),
+        }
+
+        obj.fun();
+
+
+    </script>
+</body>
+
+</html>

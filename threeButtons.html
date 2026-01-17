@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <button id="im1">Button-1</button>
+        <button id="im3">Button-2</button>
+        <button id="im4">Button-3</button>
+    </div>
+
+    <script>
+    const buttons = document.querySelectorAll('button');
+
+
+    const display = document.querySelector('.container');
+
+    display.addEventListener('click' , function(){
+        console.log('it is working')
+    });
+
+//we use forEach method->iterates through each element/node/button
+//     buttons.forEach((b)=>{ 
+//         b.addEventListener('click' , function(e){
+//          console.log(e.target.id+" using e");
+//             alert(b.id);
+//             console.log(b);
+//             console.log(b.id+" isworking");
+//         });
+//     });
+
+
+// button.addEventListener('click', function(){
+//     console.log('hello world');
+// })
+
+
+
+    </script>
+</body>
+</html>

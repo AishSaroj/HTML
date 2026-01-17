@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Page</title>
+</head>
+<body>
+    <h1>Web Page</h1>
+    <div class="container">
+        <div class="content">
+            This is text.
+        </div>
+    </div>
+
+    <div class="container1">
+
+    </div>
+
+    <script>
+        const par = document.querySelector('.container');
+        //add p
+        const pa = document.createElement('p');
+        par.appendChild(pa);
+        pa.textContent = 'I am lal';
+        pa.style.cssText = 'color : red';
+
+
+        //add h3
+        const head = document.createElement('h3');
+        par.appendChild(head);
+        head.textContent = 'I am blue';
+        head.style.cssText = 'color : blue';
+
+
+        //create div 
+        const div2 = document.createElement('div');
+        div2.style.cssText = 'background-color : pink; border : 2px solid black;';
+
+        //add h1 and p1 in div2
+        const head1 = document.createElement('h1');
+        head1.textContent = 'i am h1';
+        head1.style.cssText = 'color : purple';
+        div2.appendChild(head1);
+        
+        const paragraph = document.createElement('p');
+        paragraph.textContent = 'i am para';
+        paragraph.style.cssText = "color : green";
+        div2.appendChild(paragraph);
+
+        //add div2 in par
+        par.appendChild(div2);
+
+        const div2 = document.getElementsByClassName('container2')
+
+
+
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+
+    <style>
+        body{
+            margin: 0;
+        }
+
+        button{
+            background-color: rgb(232, 97, 209);
+            border: 2px solid rgb(174, 9, 149);
+            color: white;
+            margin-left: 20px;
+            margin-top: 20px;
+            padding: 10px 20px;
+        }
+
+        canvas{
+            border: 2px solid rgb(108, 4, 72);
+            display: block;
+          
+        }
+    </style>
+</head>
+<body>
+    <button>Update</button>
+    <canvas>
+    </canvas>
+
+    <script>
+        //queryselector --> used to select by element
+
+
+        const btn = document.querySelector('button');
+        const canvas = document.querySelector('canvas');
+
+        //getContext -> to set dimensions of canvas
+        const canvas2d = canvas.getContext('2d');
+
+        //clientWidth / height -> element in browser
+        canvas.width = document.documentElement.clientWidth;
+        canvas.height = document.documentElement.clientHeight;
+
+        function getRandom(number){
+            return Math.floor(Math.random()*number)
+        }
+
+        function getDraw(){
+            canvas2d.clearRect(0 , 0 , canvas.width , canvas.height);
+            
+            for(let i =1; i<=150; i++){
+                canvas2d.beginPath();
+                canvas2d.fillStyle = "rgb(100 100  / 60%)";
+                canvas2d.arc(getRandom(canvas.width) , getRandom(canvas.height) , getRandom(50) , 0 , 2 * Math.PI);
+                canvas2d.fill();
+
+            }
+
+        }
+
+        btn.addEventListener('click' , function(e){
+            console.log(e.target);
+            console.log('its working');
+            
+        })
+
+
+        btn.addEventListener('click' , getDraw);
+
+    </script>
+</body>
+</html>

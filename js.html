@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+
+    <p id="prog-1"></p>
+    <p id="prog-2"></p>
+    <p id="prog-3"></p>
+    <p id="prog-4"></p>
+    <button id="btn">Click Me</button>
+    <script>
+        // let n = parseInt(prompt("Enter a number : "));
+
+        // for(let i = 1; i<=n; i++){
+        //       if(i%15==0){
+        //       console.log("Buzz Fizz");
+        //     }
+        //     else if(i%3==0){
+        //         console.log("Buzz");
+        //     }
+
+        //     else if(i%5==0){
+        //         console.log("Fizz");
+        //     }
+
+        //     else{
+        //     console.log(i);
+        //     }
+        // }
+
+
+        // let m = parseInt(prompt("enter a number : "));
+        
+        // function thala(m){
+        //     return m+7;
+        // }
+        
+        // document.getElementById('prog-1').innerHTML = "Here is your thala function : " + thala(m);
+        
+
+        // let str = prompt("enter a string : ")
+
+        // function capatitalize(str ){
+      
+        //     let x = str.charAt(0).toUpperCase();
+
+            
+        //     let neww='';
+        //     for(let i = 1; i<str.length; i++){
+        //         neww += str.charAt(i).toLowerCase();
+                   
+        //     }
+        //     return x+ neww;
+        // }
+
+
+        // document.getElementById('prog-2').innerHTML = capatitalize(str);
+        
+
+
+        // let last = prompt("Enter a string : ")
+        // function lastLetter(last){
+
+        //     let n= last.length;
+        //     return last.charAt(n-1);
+        // }
+
+  
+        // document.getElementById('prog-3').innerHTML = 'Last letter of your entered word is : ' + lastLetter(last);
+
+
+       
+        // function first(myfun){
+        //     console.log("hi");
+        //   myfun(5,2);
+        // }
+
+        // first((x,y)=>{
+        //     console.log(x+y);
+        // });
+
+
+        // let arr = [];
+        // arr.push('apple')
+        // arr.push('mango')
+        // arr.push('watermelon')
+
+        
+        // arr[8] = 'banana';
+        // arr[18] = 'banana';
+        // console.log(arr)
+
+
+        // let arr = [1,2,3,4];
+
+
+        // function getSumOfTriplesEven(array){
+        //     let sum = 0;
+        //     for(let i=0; i<array.length; i++){
+        //         if(array[i]%2==0){
+        //             let ev=array[i];
+        //             ev= ev*3;
+        //             sum = sum + ev;
+        //         }
+        //     }
+
+        //     return sum;
+        // }
+
+ 
+        // document.getElementById('prog-4').innerHTML =    getSumOfTriplesEven(arr);
+
+        // let name = [12,'mature lady' , 56, 'gand faar' , 'dishuwithrishu' , 5, 'bosarpapu'];
+        // console.log(name);
+
+        // for(let i = 0; i<name.length; i++){
+        //     let nameType = typeof name[i];
+
+        //     if(nameType === 'number'){
+        //         name[i] = name[i] + 2;
+        //     }
+
+        //     else if (nameType === 'string'){
+        //         name[i] = "Say hi!! " + name[i] ;
+        //     }
+        // }
+
+        // console.log(name);        
+
+
+        // function stringUp(str){
+        //     return str.toUpperCase();
+        // }
+
+        // let array = ['mature lady' , 'gand faar' , 'dishuwithrishu' , 'bosarpapu'];
+        // console.log(array.map(stringUp));
+
+
+        // let obj = {
+        //     name : 'aish',
+        //     age : 21,
+        //     location : 'New delhi'
+        // };
+
+        // console.log(obj);
+
+        // let objj = {
+        //     ...obj,
+        //     name2 : 'appu',
+        //     age2 : 20,
+        //     location2 : 'Assam'
+        // }
+
+        // console.log(objj)
+
+
+       const btn = document.querySelector('#btn')
+       btn.addEventListener('click' , function(m){console.log(m)});
+
+
+    </script>
+</body>
+</html>
