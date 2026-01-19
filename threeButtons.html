@@ -16,21 +16,21 @@
     const buttons = document.querySelectorAll('button');
 
 
-    const display = document.querySelector('.container');
+    // const display = document.querySelector('.container');
 
-    display.addEventListener('click' , function(){
-        console.log('it is working')
+    // display.addEventListener('click' , function(){
+    //     console.log('it is working')
+    // });
+
+// we use forEach method->iterates through each element/node/button
+    buttons.forEach((b)=>{ 
+        b.addEventListener('click' , function(e){
+         console.log(e.target.id+" using e");
+            alert(b.id);
+            console.log(b);
+            console.log(b.id+" isworking");
+        });
     });
-
-//we use forEach method->iterates through each element/node/button
-//     buttons.forEach((b)=>{ 
-//         b.addEventListener('click' , function(e){
-//          console.log(e.target.id+" using e");
-//             alert(b.id);
-//             console.log(b);
-//             console.log(b.id+" isworking");
-//         });
-//     });
 
 
 // button.addEventListener('click', function(){

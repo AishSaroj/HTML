@@ -55,19 +55,13 @@
             
             for(let i =1; i<=150; i++){
                 canvas2d.beginPath();
-                canvas2d.fillStyle = "rgb(100 100  / 60%)";
+                canvas2d.fillStyle = "rgb(256 0 0 / 60%)";
                 canvas2d.arc(getRandom(canvas.width) , getRandom(canvas.height) , getRandom(50) , 0 , 2 * Math.PI);
                 canvas2d.fill();
 
             }
 
         }
-
-        btn.addEventListener('click' , function(e){
-            console.log(e.target);
-            console.log('its working');
-            
-        })
 
 
         btn.addEventListener('click' , getDraw);

@@ -5,43 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        *{
-            background-color: rgb(176, 231, 186);
-            margin: 0;
-        }
 
-        p {
-            background-color: rgb(77, 114, 87);
-            border: 2px solid rgb(3, 49, 16);
-            width: 300px;
-            margin: auto;
-            text-align: center;
-            margin-top: 20px;
-            color: white;
-
-        }
-
-        h1{
-            text-align: center;
-            background-color:  rgb(34, 57, 45);
-            color: white;
-        }
-
-        #fifth{
-           display: none;
-        }
-    </style>
 </head>
 
 <body>
     <h1>GAME : Rock-Paper-Scissor</h1>
-    <p id="first"></p>
-    <p id="fifth"></p>
-    <p id="second"></p>
-    <p id="third"></p>
-    <p id="forth"></p>
+    <div>
 
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissor">Scissor</button>
+        
+    </div>
+    <div id="result"></div>
+    <div id="score">Human: 0, Computer: 0</div>
+
+   
 
 
     <script>
@@ -59,80 +38,74 @@
                 return 'paper';
         }
 
-
-        function getHumanChoice() {
-            let user = prompt("enter your choice (rock , paper , scissor): ");
-            return user;
-        }
+        // const btn = document.querySelectorAll('button');
 
         let user_score = 0;
         let computer_score = 0;
-        let draw = 0;
+        // // let draw = 0;
+        // let round = 0;
 
-        function playRound() {
+    
+function reset(){
+    user_score=0;
+    computer_score=0;
+    document.getElementById('score').textContent='human: 0, and computer: 0';
+}
 
-            for (let i = 1; i <= 5; i++) {
+
+        function playRound(human,comp) {
+            const result=document.getElementById('result');
+            const score=document.getElementById('score');
+
+            // let ComputerChoice = getComputerChoice();
+            // let HumanChoice = humanChoice();
+
+            // console.log('computer choice : ' + ComputerChoice);
+            // console.log("Human choice : " + humanChoice);
 
 
-                let ComputerChoice = getComputerChoice();
-                let HumanChoice = getHumanChoice();
-        
-
-                if (ComputerChoice == HumanChoice) {
-                    draw++;
-                    console.log('Draw');
-                    document.getElementById('fifth').style.display = 'block' ;
-                    document.getElementById('fifth').innerHTML = " Draw - " + draw ;
+                if (human=== comp) {
+                   result.textContent=`its a tie. you both selected ${human}`;
                 }
 
-                else if (ComputerChoice == 'scissor' && HumanChoice == 'rock') {
+                else if ((comp === 'scissor' && human === 'rock') || (comp=== 'rock' && human=== 'paper') || (comp==='paper' && human=== 'scissor') ){
                     console.log('user wins!');
                     user_score++;
-                    console.log("User Score : " + user_score);
+                    result.textContent=`you won ${human} beats ${comp}`;
 
-                }
-
-                else if (ComputerChoice == 'rock' && HumanChoice == 'paper') {
-                    console.log('user wins!');
-                    user_score++;
-                    console.log("User Score : " + user_score);
-
-                }
-
-                else if (ComputerChoice == 'paper' && HumanChoice == 'scissor') {
-                    console.log('user wins!');
-                    user_score++;
-                    console.log("User Score : " + user_score);
                 }
 
                 else {
-                    console.log('computer wins!');
+                   
                     computer_score++;
-                    console.log("Computer Score : " + computer_score);
+                     result.textContent=`computer won ${comp} beats ${human}`;
                 }
+                score.textContent=`human score: ${user_score} and computrer score: ${computer_score}`;
 
-                document.getElementById('first').innerHTML = " Computer Score - " + computer_score;
-                document.getElementById('second').innerHTML = " User Score - " + user_score;
-                document.getElementById('third').innerHTML = "-----Final Round-------";
+           if(user_score===5){
+            result.textContent="congrats you won the game";
+            reset();
 
-            }
-
-
-            if (computer_score > user_score) {
-                return document.getElementById('forth').innerHTML = "Computer Wins!! Computer Score - " + computer_score;
-            }
-
-            else if (computer_score < user_score) {
-                return document.getElementById('forth').innerHTML = "User Wins!! User Score - " + user_score;
-            }
-
-            else {
-                return document.getElementById('forth').innerHTML = "Draw";
-            }
+           }
+          else if(computer_score===5){
+            result.textContent="you lostttt cheeee";
+            reset();
+          }
         }
+        document.getElementById('rock').addEventListener('click', function(){
+            playRound('rock', getComputerChoice());
+        });
+             document.getElementById('paper').addEventListener('click', function(){
+            playRound('paper', getComputerChoice());
+        });
+             document.getElementById('scissor').addEventListener('click', function(){
+            playRound('scissor', getComputerChoice());
+        });
 
 
-        playRound();
+
+
+
     </script>
 </body>
 
