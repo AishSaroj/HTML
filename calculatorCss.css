@@ -1,0 +1,47 @@
+.container{
+    border: 1px solid  black;
+    border-radius: 23px;
+    width : 415px;
+    margin:  auto;
+    height: 500px;
+    padding : 10px;
+    background-color: rgb(107, 173, 223);
+}
+
+button{
+   padding: 23px 45px;
+   margin-bottom: 12px;
+
+}
+
+.box{
+    margin-top: 80px;
+}
+
+.display{
+    border : 4px solid rgb(17, 60, 98);
+    border-radius: 23px;
+    height: 100px;
+    background-color: rgb(195, 226, 249);
+    
+}
+
+p{
+    width : 110px;
+    margin: 0 auto;
+    color: aliceblue;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#clear{
+    background-color: rgb(242, 46, 46);
+}
+
+.operator{
+    background-color: rgb(233, 168, 57);
+}
+
+#equal{
+    background-color: rgb(233, 168, 57);
+
+}

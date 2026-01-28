@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            height: 960px;
+            width: 960px;
+            border: 2px solid rgb(86, 189, 86);
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+    </style>
+</head>
+
+<body>
+    <button class="submit">Change Grid</button>
+    <div class="container"></div>
+
+    <script>
+        const container = document.querySelector('.container');
+        const btn = document.querySelector('button');
+        let width_container = 960;
+
+
+        function drawScatchPaad(n) {
+            container.innerHTML = '';
+            const size_div = width_container / n;
+            const total_div = n * n;
+
+            for (let i = 1; i <= total_div; i++) {
+                const child = document.createElement('div');
+
+                child.style.cssText = `height :${size_div}px; width : ${size_div}px`;
+
+                child.dataset.opacity = 0;
+                child.addEventListener('mouseenter', () => {
+                    let current_opacity = Number(child.dataset.opacity);
+
+                    if (current_opacity < 1) {
+                        current_opacity += 0.1;
+                        child.dataset.opacity = current_opacity;
+
+                        const r = Math.floor(Math.random() * 256);
+                        const g = Math.floor(Math.random() * 256);
+                        const b = Math.floor(Math.random() * 256);
+
+
+                        child.style.backgroundColor = `rgb(${r} ${g} ${b})`;
+                        child.style.opacity = current_opacity;
+                        console.log(r);
+                        console.log(current_opacity)
+                    }
+
+                });
+                container.appendChild(child);
+            }
+            console.log("size " + size_div);
+        }
+
+
+        drawScatchPaad(16);
+
+        btn.addEventListener('click', () => {
+            const user_input = prompt("enter size of grid : ");
+            drawScatchPaad(user_input);
+        })    
+    </script>
+</body>
+
+</html>

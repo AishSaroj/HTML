@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="calculatorCss.css">
+</head>
+<body>
+    <div class="container">
+        <p>Aish's Calculator</p>
+        <div class="display"></div>
+
+            <div class="box">
+
+                <button class="num">0</button>
+                <button class="num">1</button>
+                <button class="num">2</button>
+                <button class="operator">+</button>
+                <button class="num">3</button>
+                <button class="num">4</button>
+                <button class="num">5</button>
+                <button class="operator">-</button>
+                <button class="num">6</button>
+                <button class="num">7</button>
+                <button class="num">8</button>
+                <button class="operator">*</button>     
+                <button class="num">9</button>
+                <button id="clear">C</button>
+                <button class="operator">/</button>
+                <button id="equal">=</button>
+                
+            </div>
+    </div>
+
+    <script>
+        const numbers = document.querySelectorAll('.num');
+        const display = document.querySelector('.display');
+        const oper = document.querySelectorAll('.operator');
+        let operand_1 = '';
+        let operand_2 = '';
+        let operation = '';
+
+        function add(x,y){
+            return x+y;
+        }
+
+        function sub(x,y){
+            return x-y;
+        }
+
+        function multiply(x,y){
+            return x*y;
+        }
+
+        function div(x,y){
+            if(y===0){
+                return null;
+            }
+
+            return x/y;
+        }
+
+
+        function operator(a,b,c){
+            switch(c){
+                case '+' : return add(a,b);
+                case '-' : return sub(a,b);
+                case '*' : return multiply(a,b);
+                case '/' : return div(a,b);
+                default : return null;
+            }
+        }
+
+        numbers.forEach(y=>{
+            y.addEventListener('click' , ()=>{
+                if(operation){
+                    operand_2 = y.textContent;
+                    display.textContent = `${operand_1} ${operation} ${operand_2}`;
+                    console.log("operand-2 = "+operand_2);
+                }
+                
+                else if (!operation){
+                    operand_1 += y.textContent.toString();
+                    display.textContent = `${operand_1}`;
+                    console.log("operand-1  = "+operand_1);
+                }
+            });
+        });
+
+        
+        oper.forEach(y=>{
+            y.addEventListener('click' , ()=>{
+                if(operand_1 && (!operation)){
+                    operation = y.textContent;
+                    display.textContent = `${operand_1} ${operation} ${operand_2}`;
+                }
+                
+                else if(operand_2){
+                    const result = operator(Number(operand_1) , Number(operand_2) , operation);
+                    display.textContent = `${result} ${y.textContent} `;
+                    console.log("result = "+ result);
+                    result.toString();
+                    operation = y.textContent;
+                    console.log('oprand :' + operation);
+                    operand_1 = result;
+                    operand_2 = '';
+                }
+            });
+        });
+
+        const equal = document.getElementById('equal');
+        equal.addEventListener('click' , ()=>{
+            const re = operator(Number(operand_1) , Number(operand_2) , operation);
+            display.textContent = re;
+            console.log('first operand : ' + operand_1);
+            console.log('second operand : ' + operand_2);
+            console.log('operator : ' + operation);
+            operand_2 = '';
+            operand_1 = re;
+            operation = '';
+            console.log('first operand : ' + operand_1);
+            console.log('second operand : ' + operand_2);
+        });
+
+
+        const clear = document.getElementById('clear');
+        clear.addEventListener('click' ,()=>{
+            display.textContent = '';
+            operand_1="";
+            operand_2="";
+            operation = '';
+
+        })
+    </script>
+</body>
+</html>
