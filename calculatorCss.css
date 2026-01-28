@@ -23,6 +23,7 @@ button{
     border-radius: 23px;
     height: 100px;
     background-color: rgb(195, 226, 249);
+    text-align: center;
     
 }
 
@@ -35,13 +36,16 @@ p{
 
 #clear{
     background-color: rgb(242, 46, 46);
+    color: whitesmoke;
 }
 
 .operator{
     background-color: rgb(233, 168, 57);
+    color: whitesmoke;
 }
 
 #equal{
     background-color: rgb(233, 168, 57);
+    color: whitesmoke;
 
 }

@@ -75,7 +75,7 @@
         numbers.forEach(y=>{
             y.addEventListener('click' , ()=>{
                 if(operation){
-                    operand_2 = y.textContent;
+                    operand_2 += y.textContent;
                     display.textContent = `${operand_1} ${operation} ${operand_2}`;
                     console.log("operand-2 = "+operand_2);
                 }
